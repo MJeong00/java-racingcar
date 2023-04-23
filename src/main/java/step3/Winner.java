@@ -12,11 +12,26 @@ public class Winner {
         return max;
     }
 
-    public void addWinner(List<Car> cars) {
+    public List<Car> addWinner(List<Car> cars) {
         for (Car car : cars) {
-            if (max < car.getGoCount()) {
-                max = car.getGoCount();
-            }
+            setMaxGoCount(car);
+        }
+
+        for (Car car : cars) {
+            addOrNot(car);
+        }
+        return winners;
+    }
+
+    private void addOrNot(Car car) {
+        if (car.getGoCount() == max) {
+            winners.add(car);
+        }
+    }
+
+    private void setMaxGoCount(Car car) {
+        if (max < car.getGoCount()) {
+            max = car.getGoCount();
         }
     }
 }
