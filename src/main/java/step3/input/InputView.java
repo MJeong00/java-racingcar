@@ -5,6 +5,13 @@ import java.util.Scanner;
 
 public class InputView {
 
+    public static String inputString(String text) {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(text);
+        return scanner.nextLine();
+    }
+
     public static int input(String text) {
 
         int inputValue = 0;
@@ -17,6 +24,5 @@ public class InputView {
             inputValue = input(text);
         }
         return inputValue;
-
     }
 }
