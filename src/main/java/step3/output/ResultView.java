@@ -16,6 +16,7 @@ import java.util.List;
     }
 
     private static void printOneRace(Car car) {
+        System.out.print(car.getName() + ": ");
         for(int j = 0; j< car.getGoCount(); j++){
             System.out.print(MARK);
         }
