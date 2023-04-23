@@ -8,15 +8,26 @@ public class RacingCar {
 
     public static final int RANDOM_LIMIT = 10;
     public static final int LIMIT = 4;
-
-    public void oneRace(List<Car> cars) {
-        for (Car car : cars) {
-            boolean isGo = isValueMoreThan(randomValue());
-            goOrStop(isGo, car);
+    private static List<Car> cars = new ArrayList<>();
+    Random random = new Random();
+    public static void createCars(int carCount){
+        for(int i=0; i<carCount; i++){
+            cars.add(new Car());
         }
     }
 
-    public void goOrStop(boolean isGo, Car car) {
+    public static List<Car> getCarList() {
+        return cars;
+    }
+
+    public void oneRace() {
+        for (Car car : cars) {
+            goOrStop(car);
+        }
+    }
+
+    private void goOrStop(Car car) {
+        boolean isGo = isValueMoreThan(randomValue());
         if(isGo){
             car.addGoCount();
         }
@@ -27,9 +38,7 @@ public class RacingCar {
     }
 
     private int randomValue() {
-        Random random = new Random();
-        int value = random.nextInt(RANDOM_LIMIT);
-        return value;
+        return random.nextInt(RANDOM_LIMIT);
     }
 
 }
