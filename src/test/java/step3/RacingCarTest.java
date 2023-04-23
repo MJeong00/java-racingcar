@@ -19,8 +19,8 @@ public class RacingCarTest {
     int raceCount = 5;
 
     @Test
-    void 차_대수만큼_리스트_사이즈() {
-        assertThat(createCars(carCount)).hasSize(carCount);
+    void 차_이름만큼_리스트_사이즈() {
+        assertThat(createCars("1,2,3")).hasSize(carCount);
     }
 
     @ParameterizedTest(name = "{0} is more than 4 : {1}")

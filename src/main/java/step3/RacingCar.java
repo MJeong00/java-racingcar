@@ -9,13 +9,21 @@ public class RacingCar {
     public static final int RANDOM_LIMIT = 10;
     public static final int LIMIT = 4;
 
-    public static List<Car> createCars(int carCount){
+    public static List<Car> createCars(String carNames){
+        String[] names = split(carNames);
+
         List<Car> cars = new ArrayList<>();
-        for(int i=0; i<carCount; i++){
-            cars.add(new Car());
+        for(int i=0; i<names.length; i++){
+            cars.add(new Car(names[i]));
         }
         return cars;
     }
+
+    private static String[] split(String carsName) {
+        String[] names = carsName.split(",");
+        return names;
+    }
+
     public void oneRace(List<Car> cars) {
         for (Car car : cars) {
             goOrStop(car);
