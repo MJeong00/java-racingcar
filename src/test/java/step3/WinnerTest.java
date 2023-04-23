@@ -46,8 +46,7 @@ public class WinnerTest {
 
     @Test
     void 우승자_수() {
-        List<Car> winners = winner.addWinner(cars);
-        assertThat(winners).hasSize(2);
+        assertThat(winner.addWinner(cars)).hasSize(2);
     }
 
     @Test

@@ -8,28 +8,19 @@ public class RacingCar {
 
     public static final int RANDOM_LIMIT = 10;
     public static final int LIMIT = 4;
-    public static final int NAME_LENGTH = 5;
 
-    public static List<Car> createCars(String carNames){
-        String[] names = split(carNames);
-
+    public static List<Car> createCars(String[] names){
         List<Car> cars = new ArrayList<>();
         for(int i=0; i<names.length; i++){
-            checkName(names[i]);
+            Car.checkName(names[i]);
             cars.add(new Car(names[i]));
         }
         return cars;
     }
 
-    private static String[] split(String carsName) {
+    public static String[] split(String carsName) {
         String[] names = carsName.split(",");
         return names;
-    }
-
-    public static void checkName(String name) {
-        if(name.length() > NAME_LENGTH){
-            throw new IllegalArgumentException("이름은 5자를 넘길 수 없습니다.");
-        }
     }
 
     public void oneRace(List<Car> cars) {

@@ -17,17 +17,10 @@ public class RacingCarTest {
     RacingCar rc = new RacingCar();
     Car car = new Car();
     int carCount = 3;
-    int raceCount = 5;
-
-    @Test
-    void 차_이름() {
-        assertThatThrownBy(() -> rc.checkName("123456"))
-                .isInstanceOf(IllegalArgumentException.class);
-    }
 
     @Test
     void 차_이름만큼_리스트_사이즈() {
-        assertThat(createCars("1,2,3")).hasSize(carCount);
+        assertThat(createCars(new String[]{"1", "2", "3"})).hasSize(carCount);
     }
 
     @ParameterizedTest(name = "{0} is more than 4 : {1}")

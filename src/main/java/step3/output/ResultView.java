@@ -21,4 +21,19 @@ import java.util.List;
             System.out.print(MARK);
         }
     }
+
+     public static void printWinner(List<Car> winners){
+         for(int i=0; i< winners.size(); i++){
+             addComma(i);
+             System.out.print(winners.get(i).getName());
+         }
+         System.out.print("가 우승했습니다.");
+     }
+
+     private static void addComma(int i) {
+         if(i > 0){
+             System.out.print(", ");
+         }
+     }
+
 }
