@@ -6,9 +6,6 @@ import java.util.List;
 public class Car {
 
     private int goCount;
-    //private static List<Car> cars = new ArrayList<>();
-
-
 
     public Car() {
         this.goCount = 0;
